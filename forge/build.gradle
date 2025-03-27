@@ -77,6 +77,8 @@ repositories {
             includeGroup("com.simibubi.create")
         }
     }
+    maven { url = "https://cursemaven.com" } // Forge Config API Port
+
     maven { url = "https://jitpack.io/" } // Mixin Extras, Fabric ASM
     maven {
         // saps.dev Maven (KubeJS and Rhino)
@@ -95,7 +97,7 @@ dependencies {
     // JEI
     modCompileOnly("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}") { transitive = false }
     modCompileOnly("mezz.jei:jei-${minecraft_version}-forge-api:${jei_version}") { transitive = false }
-    modRuntimeOnly("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
+    modImplementation("mezz.jei:jei-${minecraft_version}-forge:${jei_version}")
 
     // REI
     modCompileOnly("me.shedaniel:RoughlyEnoughItems-default-plugin-forge:${rei_version}")
@@ -111,6 +113,9 @@ dependencies {
 
     // KJS
     modImplementation("dev.latvian.mods:kubejs-forge:${kjs_version}")
+
+    modImplementation("curse.maven:gtceu-890405:6254461")
+    modImplementation("curse.maven:configuration-444699:5840405")
 
     //oculus
     forgeRuntimeLibrary(runtimeOnly("org.anarres:jcpp:1.4.14"))
